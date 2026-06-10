@@ -166,6 +166,7 @@ export default function Collection() {
           quantity: editQty,
         }),
       });
+      const data = await res.json();
       if (res.ok) {
         const updated = {
           ...selected,
@@ -180,7 +181,7 @@ export default function Collection() {
         setIsEditing(false);
         setSaveStatus('saved');
       } else {
-        setSaveStatus('error');
+        setSaveStatus(data.error || 'Failed to save. Please try again.');
       }
     } catch {
       setSaveStatus('error');
@@ -583,9 +584,9 @@ export default function Collection() {
                 </div>
               </div>
 
-              {saveStatus === 'error' && (
+              {saveStatus && saveStatus !== 'saved' && (
                 <p style={{ color: '#e57373', fontSize: '0.78rem', marginBottom: '0.75rem', textAlign: 'center' }}>
-                  Failed to save. Please try again.
+                  {saveStatus}
                 </p>
               )}
 

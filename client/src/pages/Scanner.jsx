@@ -36,31 +36,27 @@ export default function Scanner() {
     setSaveStatus(null);
     setIsLoading(true);
 
-    const reader = new FileReader();
-    reader.onload = async (e) => {
-      const base64 = e.target.result.split(',')[1];
-      try {
-        const res = await fetch(`${API_URL}/api/scan`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${session?.access_token}`,
-          },
-          body: JSON.stringify({ imageBase64: base64, mediaType: file.type }),
-        });
-        const data = await res.json();
-        if (!res.ok) {
-          setError(data.error || 'Failed to identify card.');
-        } else {
-          setCard({ ...data, quantity: 1 });
-        }
-      } catch {
-        setError('Network error. Please try again.');
-      } finally {
-        setIsLoading(false);
+    try {
+      const base64 = await compressImage(file, 1200, 0.85);
+      const res = await fetch(`${API_URL}/api/scan`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session?.access_token}`,
+        },
+        body: JSON.stringify({ imageBase64: base64, mediaType: 'image/jpeg' }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.error || 'Failed to identify card.');
+      } else {
+        setCard({ ...data, quantity: 1 });
       }
-    };
-    reader.readAsDataURL(file);
+    } catch {
+      setError('Network error. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   }, []);
 
   const handleDragOver = (e) => { e.preventDefault(); setIsDragging(true); };
@@ -393,6 +389,28 @@ export default function Scanner() {
       </div>
     </div>
   );
+}
+
+// Resizes and converts any image to JPEG before sending to the API.
+// Keeps the longest side at maxPx and compresses to the given quality (0–1).
+function compressImage(file, maxPx = 1200, quality = 0.85) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      const scale = Math.min(1, maxPx / Math.max(img.width, img.height));
+      const w = Math.round(img.width * scale);
+      const h = Math.round(img.height * scale);
+      const canvas = document.createElement('canvas');
+      canvas.width = w;
+      canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+      resolve(canvas.toDataURL('image/jpeg', quality).split(',')[1]);
+    };
+    img.onerror = reject;
+    img.src = url;
+  });
 }
 
 // ── Sub-components ──────────────────────────────────────────
