@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import NavBar from './components/NavBar';
 import Scanner from './pages/Scanner';
 import Collection from './pages/Collection';
+import Agent from './pages/Agent';
 import Auth from './pages/Auth';
 
 export default function App() {
@@ -35,6 +36,7 @@ function AppRoutes() {
       <Routes>
         <Route path="/" element={<Scanner />} />
         <Route path="/collection" element={<Collection />} />
+        <Route path="/agent" element={<Agent />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>

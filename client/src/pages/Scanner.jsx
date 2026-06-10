@@ -13,10 +13,10 @@ function capitalize(str) {
 }
 
 const GOLD = '#c9a35a';
-const GOLD_DIM = '#5a4e38';
+const GOLD_DIM = '#7a6b48';
 const SURFACE = '#141210';
-const BORDER = '#2d2820';
-const TEXT = '#e8d5a8';
+const BORDER = '#3d3428';
+const TEXT = '#f0e0b8';
 
 export default function Scanner() {
   const { session } = useAuth();
@@ -126,7 +126,7 @@ export default function Scanner() {
           userSelect: 'none',
         }}
       >
-        <input id="file-input" type="file" accept="image/*" style={{ display: 'none' }} onChange={handleFileInput} />
+        <input id="file-input" type="file" accept="image/*" aria-label="Upload a card image" style={{ display: 'none' }} onChange={handleFileInput} />
 
         <SectionLabel>Identify a Card</SectionLabel>
 
@@ -320,7 +320,7 @@ export default function Scanner() {
                 display: 'flex', alignItems: 'center',
                 border: `1px solid #3d3428`, borderRadius: 6, overflow: 'hidden',
               }}>
-                <QtyButton onClick={() => setField('quantity', Math.max(1, card.quantity - 1))}>−</QtyButton>
+                <QtyButton aria-label="Decrease quantity" onClick={() => setField('quantity', Math.max(1, card.quantity - 1))}>−</QtyButton>
                 <span style={{
                   width: 52, textAlign: 'center',
                   fontSize: '0.95rem', color: TEXT,
@@ -329,7 +329,7 @@ export default function Scanner() {
                 }}>
                   {card.quantity}
                 </span>
-                <QtyButton onClick={() => setField('quantity', card.quantity + 1)}>+</QtyButton>
+                <QtyButton aria-label="Increase quantity" onClick={() => setField('quantity', card.quantity + 1)}>+</QtyButton>
               </div>
             </div>
 
@@ -399,16 +399,18 @@ export default function Scanner() {
 
 function SectionLabel({ children }) {
   return (
-    <p style={{
+    <h2 style={{
       fontFamily: 'Cinzel, serif',
       fontSize: '0.65rem',
       letterSpacing: '0.22em',
       textTransform: 'uppercase',
       color: GOLD,
       marginBottom: '1rem',
+      fontWeight: 'normal',
+      margin: '0 0 1rem',
     }}>
       {children}
-    </p>
+    </h2>
   );
 }
 
@@ -508,10 +510,11 @@ function ManaBadge({ sym, children }) {
   );
 }
 
-function QtyButton({ onClick, children }) {
+function QtyButton({ onClick, children, ...props }) {
   return (
     <button
       onClick={(e) => { e.stopPropagation(); onClick(); }}
+      {...props}
       style={{
         width: 36, height: 36,
         border: 'none',

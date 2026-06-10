@@ -25,6 +25,7 @@ export default function NavBar() {
 
       <NavLink to="/" active={location.pathname === '/'}>Scanner</NavLink>
       <NavLink to="/collection" active={location.pathname === '/collection'}>My Collection</NavLink>
+      <NavLink to="/agent" active={location.pathname === '/agent'}>Deck Builder</NavLink>
 
       {/* User info + sign out */}
       <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '1rem' }}>
