@@ -1,0 +1,202 @@
+[
+  {
+    "label": "Haiku 4.5 / minimal",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt": "minimal",
+    "accuracy": "100.0",
+    "correct": 6,
+    "total": 6,
+    "avgInputTokens": 1421,
+    "avgOutputTokens": 8,
+    "totalCostUSD": "0.007019",
+    "avgLatencyMs": 1676,
+    "details": [
+      {
+        "image": "otj-157-bristly-bill-spine-sower.jpg",
+        "expected": "Bristly Bill, Spine Sower",
+        "got": "Bristly Bill, Spine Sower",
+        "hit": true
+      },
+      {
+        "image": "IMG_1946.HEIC",
+        "expected": "The Earth Crystal",
+        "got": "The Earth Crystal",
+        "hit": true
+      },
+      {
+        "image": "IMG_1947.HEIC",
+        "expected": "Finale of Devastation",
+        "got": "Finale of Devastation",
+        "hit": true
+      },
+      {
+        "image": "IMG_1948.HEIC",
+        "expected": "Sylvan Library",
+        "got": "Sylvan Library",
+        "hit": true
+      },
+      {
+        "image": "IMG_1949.HEIC",
+        "expected": "Germination Practicum",
+        "got": "Germination Practicum",
+        "hit": true
+      },
+      {
+        "image": "winnowing_screenshot.png",
+        "expected": "Winnowing",
+        "got": "Winnowing",
+        "hit": true
+      }
+    ]
+  },
+  {
+    "label": "Haiku 4.5 / explicit",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt": "explicit",
+    "accuracy": "100.0",
+    "correct": 6,
+    "total": 6,
+    "avgInputTokens": 1431,
+    "avgOutputTokens": 8,
+    "totalCostUSD": "0.007067",
+    "avgLatencyMs": 1799,
+    "details": [
+      {
+        "image": "otj-157-bristly-bill-spine-sower.jpg",
+        "expected": "Bristly Bill, Spine Sower",
+        "got": "Bristly Bill, Spine Sower",
+        "hit": true
+      },
+      {
+        "image": "IMG_1946.HEIC",
+        "expected": "The Earth Crystal",
+        "got": "The Earth Crystal",
+        "hit": true
+      },
+      {
+        "image": "IMG_1947.HEIC",
+        "expected": "Finale of Devastation",
+        "got": "Finale of Devastation",
+        "hit": true
+      },
+      {
+        "image": "IMG_1948.HEIC",
+        "expected": "Sylvan Library",
+        "got": "Sylvan Library",
+        "hit": true
+      },
+      {
+        "image": "IMG_1949.HEIC",
+        "expected": "Germination Practicum",
+        "got": "Germination Practicum",
+        "hit": true
+      },
+      {
+        "image": "winnowing_screenshot.png",
+        "expected": "Winnowing",
+        "got": "Winnowing",
+        "hit": true
+      }
+    ]
+  },
+  {
+    "label": "Sonnet 4 (prod) / minimal",
+    "model": "claude-sonnet-4-20250514",
+    "prompt": "minimal",
+    "accuracy": "100.0",
+    "correct": 6,
+    "total": 6,
+    "avgInputTokens": 1421,
+    "avgOutputTokens": 8,
+    "totalCostUSD": "0.026322",
+    "avgLatencyMs": 1994,
+    "details": [
+      {
+        "image": "otj-157-bristly-bill-spine-sower.jpg",
+        "expected": "Bristly Bill, Spine Sower",
+        "got": "Bristly Bill, Spine Sower",
+        "hit": true
+      },
+      {
+        "image": "IMG_1946.HEIC",
+        "expected": "The Earth Crystal",
+        "got": "The Earth Crystal",
+        "hit": true
+      },
+      {
+        "image": "IMG_1947.HEIC",
+        "expected": "Finale of Devastation",
+        "got": "Finale of Devastation",
+        "hit": true
+      },
+      {
+        "image": "IMG_1948.HEIC",
+        "expected": "Sylvan Library",
+        "got": "Sylvan Library",
+        "hit": true
+      },
+      {
+        "image": "IMG_1949.HEIC",
+        "expected": "Germination Practicum",
+        "got": "Germination Practicum",
+        "hit": true
+      },
+      {
+        "image": "winnowing_screenshot.png",
+        "expected": "Winnowing",
+        "got": "Winnowing",
+        "hit": true
+      }
+    ]
+  },
+  {
+    "label": "Sonnet 4 (prod) / explicit",
+    "model": "claude-sonnet-4-20250514",
+    "prompt": "explicit",
+    "accuracy": "100.0",
+    "correct": 6,
+    "total": 6,
+    "avgInputTokens": 1431,
+    "avgOutputTokens": 8,
+    "totalCostUSD": "0.026502",
+    "avgLatencyMs": 2142,
+    "details": [
+      {
+        "image": "otj-157-bristly-bill-spine-sower.jpg",
+        "expected": "Bristly Bill, Spine Sower",
+        "got": "Bristly Bill, Spine Sower",
+        "hit": true
+      },
+      {
+        "image": "IMG_1946.HEIC",
+        "expected": "The Earth Crystal",
+        "got": "The Earth Crystal",
+        "hit": true
+      },
+      {
+        "image": "IMG_1947.HEIC",
+        "expected": "Finale of Devastation",
+        "got": "Finale of Devastation",
+        "hit": true
+      },
+      {
+        "image": "IMG_1948.HEIC",
+        "expected": "Sylvan Library",
+        "got": "Sylvan Library",
+        "hit": true
+      },
+      {
+        "image": "IMG_1949.HEIC",
+        "expected": "Germination Practicum",
+        "got": "Germination Practicum",
+        "hit": true
+      },
+      {
+        "image": "winnowing_screenshot.png",
+        "expected": "Winnowing",
+        "got": "Winnowing",
+        "hit": true
+      }
+    ]
+  }
+]

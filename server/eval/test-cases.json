@@ -1,0 +1,32 @@
+[
+  {
+    "image": "otj-157-bristly-bill-spine-sower.jpg",
+    "expected": "Bristly Bill, Spine Sower",
+    "notes": "Clean Scryfall digital image — easy baseline"
+  },
+  {
+    "image": "IMG_1946.HEIC",
+    "expected": "The Earth Crystal",
+    "notes": "iPhone photo, card upright in sleeve"
+  },
+  {
+    "image": "IMG_1947.HEIC",
+    "expected": "Finale of Devastation",
+    "notes": "iPhone photo, card rotated 90° in sleeve — tests rotation handling"
+  },
+  {
+    "image": "IMG_1948.HEIC",
+    "expected": "Sylvan Library",
+    "notes": "iPhone photo, card rotated 90° in sleeve — tests rotation handling"
+  },
+  {
+    "image": "IMG_1949.HEIC",
+    "expected": "Germination Practicum",
+    "notes": "iPhone photo, card rotated 90° in sleeve — tests rotation handling"
+  },
+  {
+    "image": "winnowing_screenshot.png",
+    "expected": "Winnowing",
+    "notes": "Dark screenshot of a card — low quality, stress test"
+  }
+]
